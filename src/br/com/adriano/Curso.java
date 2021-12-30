@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Curso {
 
+//	private int tempoTotal;
 	private String nome;
 	private String instrutor;
 	private List<Aula> aulas=new LinkedList<Aula>();
@@ -29,5 +30,16 @@ public class Curso {
 	
 	public void adiciona(Aula aula) {
 		this.aulas.add(aula);
+//		this.tempoTotal+=aula.getTempo();
 	}
+	public int getTempoTotal() {
+		//return tempoTotal;
+		return this.aulas.stream().mapToInt(Aula::getTempo).sum();
+	}
+	
+	@Override
+		public String toString() {
+			return "[Curso: "+nome+", tempo total: "+this.getTempoTotal()+
+					", aulas: " + aulas+ " ]";
+		}
 }
