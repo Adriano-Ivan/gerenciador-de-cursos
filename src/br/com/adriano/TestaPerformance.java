@@ -10,6 +10,9 @@ public class TestaPerformance {
 
 	public static void main(
 			String[] args) {
+		
+		System.out
+				.println("ArrayList: ");
 		long inicio=System.currentTimeMillis();
 		
 		List<Integer> numArray =(ArrayList<Integer>) retornaCollection(new ArrayList<Integer>(),50000);
